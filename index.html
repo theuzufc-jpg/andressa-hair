@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#faf6ef">
+<link rel="icon" href="img/logo-gold.png">
+<meta charset="utf-8">
+<title>Espaço Andressa Hair</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Especialista em alisamentos em Sapopemba, São Paulo. Alisamento orgânico, Método Andressa Hair, spa capilar, Dia da Noiva, cor, cortes, penteados e unhas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+/* Bege e dourado, sem marrom: fundos creme/areia/champanhe, dourado nos botões e detalhes, texto em tinta escura neutra.
+   Mobile primeiro: seções curtas, um destaque por bloco. Tema claro único (identidade da marca). */
+:root{
+  --cream:#faf6ef; --sand:#f2eadd; --sand2:#e8dcc9; --champ:#efe2c8; --paper:#fffdf9;
+  --ink:#24211e; --ink2:#4a4540; --muted:#7a7268; --dim:#a39a8f;
+  --gold:#a8803f; --gold2:#c9a467; --gold3:#e6d2a4; --gold4:#f4e8cc;
+  --gbtn:linear-gradient(120deg,#f1dfb2 0%,#d6b677 48%,#b38b4a 100%);
+  --line:rgba(168,128,63,.18); --line2:rgba(168,128,63,.34);
+  --serif:"Cormorant Garamond","Times New Roman",Georgia,serif;
+  --sans:"Jost","Segoe UI",Roboto,system-ui,sans-serif;
+  --ease:cubic-bezier(.23,1,.32,1);
+  --gl:max(20px,env(safe-area-inset-left,0px)); --gr:max(20px,env(safe-area-inset-right,0px));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--cream)}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1140px;margin:0 auto;padding-left:var(--gl);padding-right:var(--gr)}
+section{padding-block:clamp(60px,9vw,108px);position:relative}
+h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;line-height:1.03;letter-spacing:-.01em;text-wrap:balance;color:var(--ink)}
+h2{font-size:clamp(2.3rem,7vw,3.8rem)}
+h1 em,h2 em,h3 em{font-style:italic;font-weight:400;color:var(--gold)}
+p{margin:0}
+.eyebrow{font-size:.68rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin:0 0 14px;display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:24px;height:1px;background:currentColor}
+.center{text-align:center}
+.center .eyebrow{justify-content:center}
+.center .eyebrow::after{content:"";width:24px;height:1px;background:currentColor}
+.lede{color:var(--muted);font-size:1rem;max-width:42ch;margin-top:16px}
+.center .lede{margin-inline:auto}
+.head{margin-bottom:clamp(28px,5vw,48px)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:54px;padding:0 28px;border-radius:999px;border:1px solid transparent;text-decoration:none;font-weight:500;font-size:.94rem;letter-spacing:.02em;white-space:nowrap;transition:transform .16s var(--ease),box-shadow .3s,background .25s,border-color .25s}
+.btn:active{transform:scale(.97)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-gold{background:var(--gbtn);color:var(--ink);box-shadow:0 14px 30px -14px rgba(168,128,63,.65)}
+.btn-line{border-color:var(--line2);color:var(--gold);background:rgba(255,253,249,.6)}
+.btn-ink{background:var(--ink);color:var(--gold4)}
+.btn-sm{min-height:46px;padding:0 20px;font-size:.88rem}
+@media(hover:hover) and (pointer:fine){.btn-gold:hover{box-shadow:0 18px 36px -12px rgba(168,128,63,.8)}.btn-line:hover{background:var(--paper);border-color:var(--gold2)}}
+.ulink{display:inline-flex;align-items:center;gap:12px;color:var(--gold);text-decoration:none;font-size:.76rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;padding:12px 0;border-bottom:1px solid var(--gold2)}
+
+/* ===== INTRO: porta de vidro dupla ===== */
+#intro{position:fixed;inset:0;z-index:200;pointer-events:auto}
+#intro .frame{position:absolute;inset:0;border:clamp(10px,2.4vw,18px) solid #d9cdb9;border-top-width:clamp(18px,4vw,30px);box-shadow:inset 0 0 0 1px rgba(168,128,63,.4);z-index:3;pointer-events:none;transition:opacity .6s ease .9s}
+#intro .led{position:absolute;left:0;right:0;top:clamp(18px,4vw,30px);height:2px;background:linear-gradient(90deg,transparent,#fff3d4 20%,#fff3d4 80%,transparent);box-shadow:0 0 18px 4px rgba(255,236,190,.8);z-index:4;opacity:0;animation:fadeIn .6s ease .2s forwards;transition:opacity .5s ease}
+.door{position:absolute;top:0;bottom:0;width:50%;overflow:hidden;z-index:2;
+  background:linear-gradient(115deg,rgba(255,255,255,.42) 0%,rgba(255,255,255,.1) 38%,rgba(255,255,255,.04) 60%,rgba(255,255,255,.22) 100%);
+  backdrop-filter:blur(3px) saturate(1.1);-webkit-backdrop-filter:blur(3px) saturate(1.1);
+  transition:transform 1.25s cubic-bezier(.77,0,.18,1)}
+.door.l{left:0;border-right:2px solid rgba(120,110,95,.55)}
+.door.r{right:0;border-left:2px solid rgba(120,110,95,.55)}
+.door::after{content:"";position:absolute;inset:-20% -60%;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.65) 50%,transparent 58%);transform:translateX(-70%);animation:sweep 1.6s ease .35s forwards}
+@keyframes sweep{to{transform:translateX(70%)}}
+.door .handle{position:absolute;top:66%;width:10px;height:58px;border-radius:3px;background:linear-gradient(90deg,#4a4540,#2a2724);translate:0 -50%;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+.door.l .handle{right:12px}.door.r .handle{left:12px}
+.door .glogo{position:absolute;top:50%;width:min(64vw,340px);translate:0 -50%}
+.door.l .glogo{right:0;translate:50% -50%}
+.door.r .glogo{left:0;translate:-50% -50%}
+.glogo img{width:100%;height:auto;filter:drop-shadow(0 1px 0 rgba(255,255,255,.6))}
+.door .tag{position:absolute;top:calc(50% + min(18vw,92px));width:min(80vw,420px);text-align:center;font-size:.62rem;letter-spacing:.46em;text-transform:uppercase;color:var(--gold);opacity:0;animation:fadeIn .7s ease .6s forwards}
+.door.l .tag{right:0;translate:50% 0}.door.r .tag{left:0;translate:-50% 0}
+#intro .skip{position:absolute;z-index:5;left:50%;translate:-50% 0;bottom:calc(26px + env(safe-area-inset-bottom,0px));min-height:44px;padding:0 20px;border-radius:999px;border:1px solid var(--line2);background:rgba(255,253,249,.7);color:var(--ink2);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase}
+#intro.open .door.l{transform:translateX(-102%)}
+#intro.open .door.r{transform:translateX(102%)}
+#intro.open .frame,#intro.open .led,#intro.open .skip{opacity:0}
+#intro.open .frame{transition-delay:.5s}
+@keyframes fadeIn{to{opacity:1}}
+
+/* ===== HEADER ===== */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(250,246,239,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:72px}
+.nav .logo img{height:44px;width:auto}
+.nav-links{display:none;gap:30px;font-size:.88rem;color:var(--muted)}
+.nav-links a{text-decoration:none}.nav-links a:hover{color:var(--gold)}
+.nav-r{display:flex;align-items:center;gap:10px}
+.burger{width:48px;height:48px;border-radius:50%;border:1px solid var(--gold2);background:transparent;display:grid;place-items:center}
+.burger i{display:block;width:18px;height:1.5px;background:var(--gold);box-shadow:0 -5px 0 var(--gold),0 5px 0 var(--gold)}
+@media(min-width:1000px){.nav-links{display:flex}.burger{display:none}}
+.sheet{position:fixed;inset:0;z-index:80;background:var(--cream);display:flex;flex-direction:column;padding:calc(14px + env(safe-area-inset-top,0px)) var(--gr) calc(24px + env(safe-area-inset-bottom,0px)) var(--gl);opacity:0;transform:translateY(-12px);transition:opacity .35s ease,transform .5s var(--ease)}
+.sheet.open{opacity:1;transform:none}
+.sheet .top{display:flex;justify-content:space-between;align-items:center;min-height:58px}
+.sheet .top img{height:42px}
+.sheet nav{display:grid;margin-top:22px}
+.sheet nav a{font-family:var(--serif);font-size:2.1rem;text-decoration:none;padding:8px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.sheet nav a svg{width:18px;color:var(--gold)}
+.sheet .bot{margin-top:auto;display:grid;gap:10px;padding-top:24px}
+.x{width:48px;height:48px;border-radius:50%;border:1px solid var(--gold2);background:transparent;display:grid;place-items:center;color:var(--gold)}
+.x svg{width:20px}
+
+/* ===== HERO ===== */
+.hero{padding-block:0 48px;overflow:hidden;background:linear-gradient(180deg,var(--cream) 0%,var(--sand) 100%)}
+.hero .wrap{display:grid}
+.hero-art{position:relative;margin-inline:calc(-1*var(--gl)) calc(-1*var(--gr));height:clamp(390px,108vw,560px);overflow:hidden}
+.hero-word{position:absolute;top:22px;left:50%;font-family:var(--serif);font-weight:500;font-size:clamp(4.6rem,25vw,11rem);line-height:1;letter-spacing:-.01em;white-space:nowrap;
+  background:linear-gradient(180deg,rgba(201,164,103,.85),rgba(201,164,103,.12));-webkit-background-clip:text;background-clip:text;color:transparent;user-select:none;transform:translate(-50%,var(--py,0px))}
+.hero-art img{position:absolute;left:50%;bottom:0;translate:-50% 0;height:100%;width:auto;max-width:none;
+  -webkit-mask-image:linear-gradient(180deg,#000 74%,transparent 99%);mask-image:linear-gradient(180deg,#000 74%,transparent 99%)}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:-34px;position:relative}
+.pill{display:inline-flex;align-items:center;min-height:36px;padding:0 16px;border-radius:999px;border:1px solid var(--line2);background:rgba(255,253,249,.8);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.hero h1{font-size:clamp(2.9rem,12vw,5.2rem);margin-top:20px}
+.hero h1 em{display:block}
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:26px}
+.hi{animation:rise 1s var(--ease) both}
+.hi.d1{animation-delay:.12s}.hi.d2{animation-delay:.24s}.hi.d3{animation-delay:.36s}
+
+@keyframes rise{from{opacity:.001;transform:translateY(24px)}}
+@media(min-width:960px){.hero{padding-block:24px 70px}.hero .wrap{grid-template-columns:1.05fr 1fr;align-items:center}.hero-art{order:2;margin:0;height:620px}.hero-word{font-size:9.5rem}.pills{margin-top:0}}
+
+/* ===== FAIXAS ===== */
+.bands{display:grid;gap:0;background:var(--sand);overflow:hidden}
+.band{overflow:hidden;padding:16px 0;border-block:1px solid var(--line)}
+.band.gold{background:var(--gbtn);border:0}
+.band .tr{display:flex;width:max-content;animation:mq 38s linear infinite}
+.band.rev .tr{animation-direction:reverse;animation-duration:44s}
+.band span{display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap;font-family:var(--serif);font-size:clamp(1.3rem,4.4vw,1.8rem);color:var(--gold)}
+.band.gold span{color:var(--ink);font-family:var(--sans);font-size:.74rem;letter-spacing:.32em;text-transform:uppercase;font-weight:500}
+.band i{font-style:normal;color:var(--gold2);font-size:.9em}
+.band.gold i{color:var(--paper)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ===== SERVIÇOS: cards ===== */
+.svc{background:linear-gradient(180deg,var(--sand) 0%,var(--cream) 100%)}
+.track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-inline:calc(-1*var(--gl)) calc(-1*var(--gr));padding:4px max(9vw,var(--gr)) 8px max(9vw,var(--gl));scroll-padding-inline:max(9vw,var(--gl))}
+.track::-webkit-scrollbar{display:none}
+.scard{flex:0 0 min(82vw,380px);scroll-snap-align:center;border-radius:28px;overflow:hidden;background:var(--paper);border:1px solid var(--line2);display:flex;flex-direction:column;box-shadow:0 30px 50px -40px rgba(80,60,30,.5);transition:transform .5s var(--ease),opacity .5s}
+.scard .ph{position:relative;aspect-ratio:4/4.1;overflow:hidden}
+.scard .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.scard .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(20,16,12,.7) 100%)}
+.scard .num{position:absolute;top:18px;left:18px;z-index:1;min-width:52px;height:34px;padding:0 14px;border-radius:999px;display:grid;place-items:center;background:rgba(36,33,30,.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.35);color:#fff;font-size:.8rem;letter-spacing:.12em;font-variant-numeric:tabular-nums}
+.scard .tt{position:absolute;left:24px;right:20px;bottom:20px;z-index:1;color:#fff}
+.scard .tt small{display:block;font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold4);margin-bottom:6px}
+.scard .tt h3{color:#fff;font-size:clamp(2.4rem,10vw,3rem);line-height:1}
+.scard .bd{padding:22px 24px 26px;display:flex;flex-direction:column;gap:20px;flex:1;background:linear-gradient(180deg,var(--paper),var(--cream))}
+.scard .bd p{color:var(--ink2);font-size:.96rem;line-height:1.7}
+.scard .bd .btn{align-self:flex-start;margin-top:auto}
+.scard:not(.on){opacity:.75;transform:scale(.96)}
+.ctl{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:28px}
+.circ{width:52px;height:52px;border-radius:50%;border:1px solid var(--gold2);background:var(--paper);display:grid;place-items:center;color:var(--gold);flex:none}
+.circ svg{width:20px}
+.dots{display:flex;gap:9px;align-items:center}
+.dots button{width:9px;height:9px;border-radius:999px;border:0;padding:0;background:#d5ccbf;transition:width .4s var(--ease),background .3s}
+.dots button[aria-current="true"]{width:34px;background:var(--gbtn)}
+.svc-meta{text-align:center;margin-top:16px;display:grid;gap:6px}
+.svc-meta b{font-weight:500;color:var(--gold);letter-spacing:.2em;font-size:.82rem;font-variant-numeric:tabular-nums}
+.svc-meta span{color:var(--muted);font-size:.85rem}
+@media(min-width:960px){.scard{flex-basis:360px}.track{padding-inline:calc(50% - 180px);scroll-padding-inline:calc(50% - 180px)}}
+
+/* ===== VALORES ===== */
+.price{background:var(--sand)}
+.seg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;padding:5px;border-radius:999px;background:var(--paper);border:1px solid var(--line);max-width:620px;margin:0 auto 26px}
+.seg button{min-height:48px;border:0;border-radius:999px;background:transparent;color:var(--muted);font-size:.8rem;line-height:1.15;padding:4px 6px;transition:background .25s,color .25s}
+.seg button[aria-checked="true"]{background:var(--gbtn);color:var(--ink);font-weight:500}
+.pgrid{display:grid;gap:14px;max-width:920px;margin:0 auto}
+.pcard{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:4px 22px 8px}
+.pcard h3{font-size:1.5rem;padding:16px 0 4px;display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.pcard h3 small{font-family:var(--sans);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.prow{display:flex;align-items:baseline;gap:10px;padding:13px 0;border-top:1px solid var(--line)}
+.prow:first-of-type{border-top:0}
+.prow .n{font-size:.95rem}.prow .n small{display:block;font-size:.76rem;color:var(--dim)}
+.prow .d{flex:1;border-bottom:1px dotted var(--line2);transform:translateY(-5px);min-width:16px}
+.prow .v{font-family:var(--serif);font-size:1.75rem;font-weight:500;color:var(--gold);font-variant-numeric:lining-nums tabular-nums;white-space:nowrap}
+.prow .v small{font-family:var(--sans);font-size:.66rem;color:var(--dim);margin-right:3px;vertical-align:.55em}
+.prow.flash .v{animation:flash .45s var(--ease)}
+@keyframes flash{from{opacity:.15;transform:translateY(6px)}}
+.pfoot{text-align:center;margin-top:24px;color:var(--muted);font-size:.9rem}
+.pfoot .btn{margin-top:14px}
+@media(min-width:820px){.pgrid{grid-template-columns:1fr 1fr;align-items:start}}
+
+/* ===== RESULTADOS ===== */
+.res{background:var(--cream);overflow:hidden}
+.cg{position:relative;height:clamp(420px,118vw,560px);margin-inline:calc(-1*var(--gl)) calc(-1*var(--gr));overflow:hidden;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none;outline:none;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.cg-item{position:absolute;left:50%;top:6%;will-change:transform;cursor:zoom-in}
+.cg-img{width:100%;height:100%;border-radius:var(--cg-r,14px);overflow:hidden;box-shadow:0 26px 40px -24px rgba(60,45,25,.5)}
+.cg-img img{width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
+.cg-t{position:absolute;left:-20%;right:-20%;top:calc(100% + 14px);text-align:center;font-family:var(--serif);font-size:1.3rem;white-space:nowrap}
+.cg-nav{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:6px}
+.cg-nav span{font-size:.8rem;color:var(--gold);letter-spacing:.16em;min-width:9ch;text-align:center;font-variant-numeric:tabular-nums}
+
+/* ===== VÍDEOS ===== */
+.vid{background:linear-gradient(180deg,var(--champ) 0%,var(--sand) 100%)}
+.vrail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-inline:calc(-1*var(--gl)) calc(-1*var(--gr));padding:0 var(--gr) 8px var(--gl);scroll-padding-left:var(--gl)}
+.vrail::-webkit-scrollbar{display:none}
+.vcard{flex:0 0 min(62vw,260px);scroll-snap-align:start;display:flex;flex-direction:column;gap:12px}
+.vcard .mv{position:relative;aspect-ratio:9/15;border-radius:24px;overflow:hidden;background:var(--sand2);padding:0;border:0;box-shadow:0 0 0 1px var(--line2),0 24px 40px -28px rgba(80,60,30,.55);cursor:pointer;display:block;width:100%}
+.vcard .mv::before{content:"";position:absolute;inset:6px;border-radius:19px;border:1px solid rgba(255,255,255,.45);z-index:2;pointer-events:none}
+.vcard video,.vcard .mv img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vcard .mv::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15) 0%,transparent 30%,transparent 65%,rgba(20,16,12,.35));pointer-events:none}
+.vcard .chip{position:absolute;top:14px;left:14px;z-index:3;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);background:rgba(255,253,249,.88);padding:6px 11px;border-radius:999px}
+.vcard .dur{position:absolute;top:14px;right:14px;z-index:3;font-size:.7rem;color:#fff;background:rgba(36,33,30,.5);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:5px 10px;border-radius:999px;font-variant-numeric:tabular-nums}
+.vcard .play{position:absolute;left:50%;top:50%;translate:-50% -50%;z-index:3;width:62px;height:62px;border-radius:50%;background:rgba(255,253,249,.28);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.7);display:grid;place-items:center;transition:transform .4s var(--ease)}
+.vcard .play svg{width:20px;color:#fff;margin-left:3px}
+.vcard .cap{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;padding:0 4px}
+.vcard .cap b{font-family:var(--serif);font-weight:500;font-size:1.35rem;line-height:1.1}
+.vcard .cap span{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);white-space:nowrap;padding-bottom:3px}
+@media(hover:hover) and (pointer:fine){.vcard .mv:hover .play{transform:scale(1.1)}}
+.vctl{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:22px}
+.prog{flex:1;max-width:240px;height:2px;background:var(--line2);border-radius:2px;position:relative;overflow:hidden}
+.prog i{position:absolute;inset:0 auto 0 0;background:var(--gold);width:20%}
+.arrows{display:flex;gap:10px}
+
+/* ===== DEPOIMENTOS ===== */
+.dep{background:var(--cream)}
+.qrail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-inline:calc(-1*var(--gl)) calc(-1*var(--gr));padding:0 var(--gr) 8px var(--gl);scroll-padding-left:var(--gl);align-items:flex-start}
+.qrail::-webkit-scrollbar{display:none}
+.qcard{flex:0 0 min(70vw,280px);scroll-snap-align:start;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:14px;display:grid;gap:12px}
+.qcard button{all:unset;cursor:zoom-in;display:block;border-radius:14px;overflow:hidden;height:250px;background:#f3efe9}
+.qcard img{width:100%;height:100%;object-fit:cover;object-position:top}
+.qcard.wide img{object-fit:contain;object-position:center}
+.qcard p{font-family:var(--serif);font-style:italic;font-size:1.22rem;line-height:1.25;color:var(--ink)}
+.qcard .st{display:flex;gap:2px;color:var(--gold2)}.qcard .st svg{width:14px;height:14px}
+.gcard{margin-top:26px;background:var(--gbtn);border-radius:24px;padding:24px;display:grid;gap:12px;color:var(--ink)}
+.gcard h3{font-size:1.7rem}
+.gcard p{font-size:.92rem;color:var(--ink2)}
+.gcard .btn{justify-self:start}
+@media(min-width:960px){.gcard{display:flex;align-items:center;justify-content:space-between}.gcard>div{max-width:520px}}
+
+/* ===== INSTAGRAM ===== */
+.insta{background:linear-gradient(180deg,var(--sand) 0%,var(--champ) 100%);overflow:hidden}
+.insta .wrap{display:grid;gap:36px;align-items:center}
+.ph-stage{position:relative;justify-self:center;width:min(70vw,330px);padding-bottom:40px}
+.ph-stage img{pointer-events:none;user-select:none;-webkit-user-drag:none;width:100%;height:auto;animation:float 6s ease-in-out infinite;filter:drop-shadow(0 40px 30px rgba(80,60,30,.28))}
+.ph-stage::after{content:"";position:absolute;left:18%;right:18%;bottom:6px;height:22px;border-radius:50%;background:radial-gradient(closest-side,rgba(80,60,30,.32),transparent);animation:shadow 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-1.5deg)}50%{transform:translateY(-18px) rotate(1deg)}}
+@keyframes shadow{0%,100%{transform:scaleX(1);opacity:1}50%{transform:scaleX(.8);opacity:.6}}
+.insta .stats{display:flex;gap:28px;margin-top:22px}
+.insta .stats b{display:block;font-family:var(--serif);font-weight:500;font-size:2.2rem;line-height:1;color:var(--ink)}
+.insta .stats span{font-size:.8rem;color:var(--muted)}
+@media(min-width:960px){.insta .wrap{grid-template-columns:1fr 1fr}.ph-stage{order:2}}
+
+/* ===== EXPERIÊNCIAS ===== */
+.exp{background:var(--cream)}
+.xrail{display:grid;gap:16px}
+.xc{background:var(--paper);border:1px solid var(--line);border-radius:26px;overflow:hidden;display:grid}
+.xc .im{position:relative;aspect-ratio:16/12;overflow:hidden}
+.xc .im img{width:100%;height:100%;object-fit:cover}
+.xc .im button{position:absolute;right:14px;bottom:14px;display:flex;align-items:center;gap:8px;min-height:44px;padding:0 16px 0 6px;border-radius:999px;border:0;background:rgba(255,253,249,.92);color:var(--ink);font-size:.82rem}
+.xc .im button i{width:32px;height:32px;border-radius:50%;background:var(--gbtn);display:grid;place-items:center}
+.xc .im button svg{width:12px;color:var(--ink);margin-left:2px}
+.xc .bd{padding:22px 22px 24px;display:grid;gap:12px}
+.xc h3{font-size:2rem}
+.xc p{color:var(--muted);font-size:.94rem}
+.xc ul{list-style:none;margin:2px 0;padding:0}
+.xc li{display:flex;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:.9rem}
+.xc li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold2);margin-top:9px;flex:none}
+.xc .th{display:flex;gap:8px}
+.xc .th button{all:unset;cursor:zoom-in;width:56px;height:56px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.xc .th img{width:100%;height:100%;object-fit:cover}
+@media(min-width:860px){.xrail{grid-template-columns:1fr 1fr;gap:22px}}
+
+/* ===== AGENDAR ===== */
+.book{background:var(--sand)}
+.book .wrap{display:grid;gap:30px}
+.bform{display:grid;gap:24px}
+.bstep{display:grid;gap:12px}
+.bl{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500;display:flex;gap:10px;align-items:center}
+.bl i{font-style:normal;width:24px;height:24px;border-radius:50%;border:1px solid var(--gold2);display:grid;place-items:center;font-size:.7rem;letter-spacing:0}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{position:relative}
+.opt input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}
+.opt span{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--line2);background:var(--paper);font-size:.88rem;transition:all .2s}
+.opt input:checked+span{background:var(--gbtn);border-color:transparent;color:var(--ink);font-weight:500}
+.opt input:focus-visible+span{outline:2px solid var(--gold);outline-offset:2px}
+.fld input,.fld select,.fld textarea{width:100%;font:inherit;color:var(--ink);background:var(--paper);border:1px solid var(--line2);border-radius:14px;min-height:52px;padding:12px 16px}
+.fld textarea{min-height:88px;resize:vertical}
+.fld label{display:block;font-size:.82rem;color:var(--muted);margin-bottom:6px}
+.two{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+.err{color:#9b3a22;font-size:.86rem}
+.sum{background:var(--paper);border:1px solid var(--gold2);border-radius:26px;padding:24px;display:grid;gap:12px;align-self:start;box-shadow:0 30px 50px -40px rgba(80,60,30,.5)}
+.sum h3{font-size:1.7rem}
+.est{font-family:var(--serif);font-size:2.6rem;font-weight:500;color:var(--gold);line-height:1}
+.est small{display:block;font-family:var(--sans);font-size:.76rem;color:var(--dim);margin-top:6px}
+.sum dl{margin:0}
+.sum dl div{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+.sum dt{color:var(--dim)}.sum dd{margin:0;text-align:right}
+.sum .note{font-size:.78rem;color:var(--dim)}
+@media(min-width:960px){.book .wrap{grid-template-columns:1.25fr .85fr;gap:60px}.book .hd{grid-column:1/-1}.sum{position:sticky;top:96px}}
+
+/* ===== LOCAL ===== */
+.loc{padding:0;background:var(--cream)}
+.map{position:relative;height:clamp(400px,96vw,560px);overflow:hidden}
+.map iframe,.map>img{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
+.map>img{object-position:50% 30%}
+.loc-card{position:relative;z-index:2;margin:-110px var(--gr) 0 var(--gl);background:var(--paper);border-radius:28px;padding:28px 24px;box-shadow:0 30px 60px -36px rgba(60,45,25,.5);display:grid;gap:14px}
+.loc-card .pin{width:28px;color:var(--gold)}
+.loc-card h2{font-size:clamp(2.2rem,8vw,3.1rem)}
+.loc-card address{font-style:normal;color:var(--muted);line-height:1.9}
+.loc-card .btn{justify-content:space-between;width:100%}
+.loc-wrap{padding-bottom:clamp(60px,9vw,100px)}
+@media(min-width:600px){.loc-card{max-width:500px;margin-inline:auto}}
+@media(min-width:960px){.loc-wrap{position:relative;padding-bottom:0}.loc-card{position:absolute;left:max(40px,calc((100vw - 1140px)/2));top:60px;margin:0;width:440px}.map{height:600px}}
+
+/* ===== FOOTER ===== */
+footer{position:relative;isolation:isolate;background:var(--cream) url(img/footer-bg.webp) center/cover no-repeat;padding-block:64px calc(110px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line)}
+footer::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(250,246,239,.35),rgba(250,246,239,.55))}
+footer .wrap{display:grid;gap:22px;justify-items:center;text-align:center}
+footer .fl img{height:68px;width:auto;margin:0 auto}
+footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:2px 20px}
+footer nav a{text-decoration:none;font-size:.88rem;padding:8px 0;color:var(--ink2)}
+footer .cr{font-size:.76rem;color:var(--muted);border-top:1px solid var(--line2);padding-top:18px;width:100%;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 20px}
+
+.fab{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:45;width:60px;height:60px;border-radius:50%;background:var(--gbtn);color:var(--ink);display:grid;place-items:center;box-shadow:0 16px 34px -12px rgba(80,60,30,.55);transition:transform .4s var(--ease),opacity .3s}
+.fab svg{width:28px}
+.fab.away{transform:translateY(140%);opacity:0}
+
+/* ===== MODAL ===== */
+.modal{position:fixed;inset:0;z-index:150;background:rgba(30,27,24,.94);display:flex;flex-direction:column;opacity:0;transition:opacity .25s ease;padding:calc(10px + env(safe-area-inset-top,0px)) var(--gr) calc(14px + env(safe-area-inset-bottom,0px)) var(--gl);color:#f1eadf}
+.modal.show{opacity:1}
+.m-top{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:60px}
+.m-top span{font-size:.9rem;color:#c9bfb2}.m-top span b{color:#fff;font-weight:500}
+.m-top .x{border-color:rgba(230,210,164,.45);color:var(--gold3)}
+.m-stage{flex:1;min-height:0;display:grid;place-items:center;position:relative;touch-action:pan-y}
+.m-stage img,.m-stage video{max-height:100%;max-width:100%;object-fit:contain;border-radius:14px}
+.m-stage video{background:#000}
+.m-stage.scroll{place-items:start center;overflow:auto}.m-stage.scroll img{max-height:none}
+.m-nav{position:absolute;top:50%;translate:0 -50%;width:46px;height:46px;border-radius:50%;border:1px solid rgba(230,210,164,.45);background:rgba(30,27,24,.7);display:grid;place-items:center;color:var(--gold3)}
+.m-nav svg{width:18px}.m-prev{left:0}.m-next{right:0}
+.m-bot{display:flex;justify-content:center;gap:10px;padding-top:12px;flex-wrap:wrap}
+
+/* ===== SCROLL ===== */
+.js .rv{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform 1.1s var(--ease);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv-img{clip-path:inset(12% 8% 12% 8% round 28px);transition:clip-path 1.3s var(--ease)}
+.js .rv-img.in{clip-path:inset(0 0 0 0 round 0)}
+.js .rv-line h2{background:linear-gradient(90deg,var(--ink),var(--ink)) 0 0/0 0 no-repeat}
+.js .scale-in{transform:scale(.92);opacity:0;transition:transform 1.2s var(--ease),opacity .9s var(--ease)}
+.js .scale-in.in{transform:none;opacity:1}
+.progress{position:fixed;left:0;top:env(safe-area-inset-top,0px);height:2px;width:100%;transform-origin:left;transform:scaleX(var(--p,0));background:var(--gbtn);z-index:70;pointer-events:none}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  #intro{display:none}
+  .js .rv,.js .scale-in{opacity:1;transform:none}.js .rv-img{clip-path:none}
+}
+</style>
+
+<div id="intro" aria-hidden="true">
+  <div class="door l"><div class="glogo"><img src="img/logo-gold.png" alt=""></div><div class="tag">Salão de beleza · Sapopemba</div><span class="handle"></span></div>
+  <div class="door r"><div class="glogo"><img src="img/logo-gold.png" alt=""></div><div class="tag">Salão de beleza · Sapopemba</div><span class="handle"></span></div>
+  <div class="frame"></div><div class="led"></div>
+  <button class="skip" type="button" id="skip">Entrar</button>
+</div>
+
+<div class="progress" id="prog" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Espaço Andressa Hair, início"><img src="img/logo-gold.png" alt="Espaço Andressa Hair" width="97" height="44"></a>
+    <nav class="nav-links" aria-label="Principal"><a href="#servicos">Serviços</a><a href="#valores">Valores</a><a href="#resultados">Resultados</a><a href="#videos">Vídeos</a><a href="#local">Localização</a></nav>
+    <div class="nav-r">
+      <a class="btn btn-gold btn-sm" href="#agendar">Agendar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <button class="burger" type="button" id="om" aria-label="Abrir menu" aria-expanded="false" aria-controls="sheet"><i></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="top"><img src="img/logo-gold.png" alt="Espaço Andressa Hair"><button class="x" type="button" id="cm" aria-label="Fechar menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <nav aria-label="Menu" id="sheetNav"></nav>
+  <div class="bot"><a class="btn btn-gold" href="#agendar">Agendar meu horário</a><a class="btn btn-line" href="https://www.instagram.com/andressa_hair01/" target="_blank" rel="noopener">@andressa_hair01</a></div>
+</div>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-art hi">
+      <div class="hero-word" id="heroWord" aria-hidden="true">Andressa</div>
+      <img src="img/andressa-cut.webp" alt="Andressa, especialista em alisamentos e dona do Espaço Andressa Hair" width="900" height="1125" fetchpriority="high">
+    </div>
+    <div>
+      <div class="pills hi d1"><span class="pill">Alisamentos</span><span class="pill">Método AH</span></div>
+      <h1 class="hi d1">Liso, leve e <em>cheio de luz.</em></h1>
+      <p class="lede hi d2">Especialista em alisamentos em Sapopemba, São Paulo. Cuidado de verdade do primeiro fio ao último detalhe.</p>
+      <div class="hero-cta hi d3">
+        <a class="btn btn-gold" href="#agendar">Agendar avaliação <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="ulink" href="#servicos">Conheça os serviços</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="bands" aria-hidden="true">
+  <div class="band gold"><div class="tr" id="b1"></div></div>
+  <div class="band rev"><div class="tr" id="b2"></div></div>
+</div>
+
+<section class="svc" id="servicos">
+  <div class="wrap">
+    <div class="head rv"><p class="eyebrow">Nosso menu de beleza</p><h2>Cuidado que combina <em>com você.</em></h2><p class="lede">Escolha por onde quer começar.</p></div>
+    <div class="track rv" id="track" role="region" aria-label="Serviços" tabindex="0"></div>
+    <div class="ctl"><button class="circ" type="button" id="sPrev" aria-label="Serviço anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><div class="dots" id="dots"></div><button class="circ" type="button" id="sNext" aria-label="Próximo serviço"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+    <div class="svc-meta"><b id="sCount">01 / 09</b><span>Arraste para conhecer • Consulte valores pelo WhatsApp</span></div>
+  </div>
+</section>
+
+<section class="price" id="valores">
+  <div class="wrap">
+    <div class="head center rv"><p class="eyebrow">Tabela de valores</p><h2>Qual o tamanho do <em>seu cabelo?</em></h2><p class="lede">Toque no comprimento e veja o valor de cada procedimento.</p></div>
+    <div class="seg rv" role="radiogroup" aria-label="Comprimento do cabelo" id="seg"></div>
+    <div class="pgrid" id="pgrid" aria-live="polite"></div>
+    <div class="pfoot"><p>Em dúvida? A equipe avalia o seu cabelo e indica o procedimento certo.</p><a class="btn btn-line btn-sm" data-wa="Olá, Andressa! Vim pelo site e queria ajuda para escolher o procedimento certo para o meu cabelo.">Pedir indicação</a></div>
+  </div>
+</section>
+
+<section class="res" id="resultados">
+  <div class="wrap">
+    <div class="head center rv"><p class="eyebrow">Resultados</p><h2>Beleza que <em>se revela.</em></h2><p class="lede">Fotos reais do salão. Arraste a galeria e toque para ampliar.</p></div>
+    <div class="cg" id="cg" tabindex="0" role="region" aria-roledescription="galeria" aria-label="Galeria de resultados"></div>
+    <div class="cg-nav"><button class="circ" type="button" id="cgPrev" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><span id="cgCount" aria-live="polite"></span><button class="circ" type="button" id="cgNext" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+  </div>
+</section>
+
+<section class="vid" id="videos">
+  <div class="wrap">
+    <div class="head rv"><p class="eyebrow">Na cadeira da Andressa</p><h2>O brilho <em>em movimento.</em></h2><p class="lede">Os vídeos tocam sem som enquanto você rola. Toque para assistir com áudio.</p></div>
+    <div class="vrail rv" id="vrail"></div>
+    <div class="vctl"><div class="prog"><i id="vprog"></i></div><div class="arrows"><button class="circ" type="button" id="vPrev" aria-label="Vídeo anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button class="circ" type="button" id="vNext" aria-label="Próximo vídeo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div></div>
+  </div>
+</section>
+
+<section class="dep" id="depoimentos">
+  <div class="wrap">
+    <div class="head rv"><p class="eyebrow">Depoimentos</p><h2>O carinho de quem <em>já passou por aqui.</em></h2><p class="lede">Mensagens reais das clientes. Toque para ler inteira.</p></div>
+    <div class="qrail rv" id="qrail"></div>
+    <div class="gcard rv">
+      <div><h3>Já foi atendida aqui?</h3><p>Sua avaliação no Google ajuda outras mulheres a encontrarem o espaço.</p></div>
+      <a class="btn btn-ink btn-sm" href="https://search.google.com/local/writereview?placeid=ChIJ_ZhklKhpzpQRIbhe6xhH3UM" target="_blank" rel="noopener">Avaliar no Google ★</a>
+    </div>
+  </div>
+</section>
+
+<div class="bands" aria-hidden="true">
+  <div class="band gold"><div class="tr" id="b3"></div></div>
+  <div class="band rev"><div class="tr" id="b4"></div></div>
+</div>
+
+<section class="insta" id="instagram">
+  <div class="wrap">
+    <div class="ph-stage scale-in"><img src="img/insta-phone.webp" alt="Celular dourado mostrando o perfil @andressa_hair01 no Instagram" width="540" height="1200" loading="lazy"></div>
+    <div class="rv">
+      <p class="eyebrow">Acompanhe nosso dia a dia</p>
+      <h2>A beleza <em>continua por aqui.</em></h2>
+      <p class="lede">Resultados novos, bastidores e o Método AH no Instagram.</p>
+      <div class="stats"><div><b>6.137</b><span>seguidoras</span></div><div><b>520</b><span>publicações</span></div></div>
+      <a class="btn btn-gold" style="margin-top:26px" href="https://www.instagram.com/andressa_hair01/" target="_blank" rel="noopener">Seguir @andressa_hair01</a>
+    </div>
+  </div>
+</section>
+
+<section class="exp" id="experiencias">
+  <div class="wrap">
+    <div class="head center rv"><p class="eyebrow">Experiências</p><h2>Para os dias <em>que pedem mais.</em></h2></div>
+    <div class="xrail">
+      <article class="xc rv" id="noiva">
+        <div class="im"><img class="rv-img" src="img/n4.webp" alt="Sala do Dia da Noiva com banheira de hidromassagem e maca" loading="lazy"><button type="button" data-video="banheira"><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></i>Ver a sala</button></div>
+        <div class="bd">
+          <p class="eyebrow" style="margin:0">Dia da Noiva</p>
+          <h3>O grande dia, <em>sem pressa.</em></h3>
+          <p>Uma sala reservada para a noiva se preparar com calma.</p>
+          <ul><li>Banheira de hidromassagem com bandeja de lanche e brinde</li><li>Penteado e maquiagem da noiva</li><li>Penteados também para as daminhas</li></ul>
+          <div class="th"><button type="button" data-gal="bride" data-i="0" aria-label="Ver foto: noiva"><img src="img/n2.webp" alt="" loading="lazy"></button><button type="button" data-gal="bride" data-i="1" aria-label="Ver foto: cortejo"><img src="img/n5.webp" alt="" loading="lazy"></button><button type="button" data-gal="bride" data-i="2" aria-label="Ver foto: daminhas"><img src="img/n1.webp" alt="" loading="lazy"></button><button type="button" data-gal="bride" data-i="3" aria-label="Ver foto: banheira"><img src="img/n3.webp" alt="" loading="lazy"></button></div>
+          <a class="btn btn-gold btn-sm" style="justify-self:start;margin-top:4px" data-wa="Olá, Andressa! Vim pelo site e quero saber sobre o Dia da Noiva.">Quero o Dia da Noiva</a>
+        </div>
+      </article>
+      <article class="xc rv" id="spa" style="--d:.12s">
+        <div class="im"><img class="rv-img" src="img/spa1.webp" alt="Cliente deitada no spa capilar com água iluminada" loading="lazy" style="object-position:50% 35%"><button type="button" data-video="spa"><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></i>Ver o spa</button></div>
+        <div class="bd">
+          <p class="eyebrow" style="margin:0">Spa capilar</p>
+          <h3>Uma pausa para o <em>couro cabeludo.</em></h3>
+          <p>Lavagem terapêutica deitada, com água corrente, luz e massagem.</p>
+          <ul><li>Maca reclinada com arco de água</li><li>Massagem e limpeza profunda</li><li>Luz e água corrente durante a lavagem</li></ul>
+          <div class="th"><button type="button" data-gal="spa" data-i="0" aria-label="Ver foto do spa"><img src="img/spa2.webp" alt="" loading="lazy"></button><button type="button" data-gal="spa" data-i="1" aria-label="Ver foto do spa"><img src="img/spa1.webp" alt="" loading="lazy"></button></div>
+          <a class="btn btn-gold btn-sm" style="justify-self:start;margin-top:4px" data-wa="Olá, Andressa! Vim pelo site e quero agendar o spa capilar.">Agendar spa capilar</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="agendar">
+  <div class="wrap">
+    <div class="hd rv"><p class="eyebrow">Agendamento</p><h2>Monte o seu <em>horário.</em></h2><p class="lede">Escolha o cuidado e o comprimento: o valor aparece na hora e o pedido vai pronto para o WhatsApp.</p></div>
+    <form class="bform" id="bform" novalidate>
+      <div class="bstep"><div class="bl" id="l1"><i>1</i>O que vamos fazer?</div><div class="opts" role="radiogroup" aria-labelledby="l1" id="bSvc"></div><p class="err" id="eSvc" hidden>Escolha um cuidado para continuar.</p></div>
+      <div class="bstep" id="stepVar" hidden><div class="bl" id="lv"><i>+</i>Opção</div><div class="opts" role="radiogroup" aria-labelledby="lv" id="bVar"></div></div>
+      <div class="bstep" id="stepLen" hidden><div class="bl" id="l2"><i>2</i>Comprimento</div><div class="opts" role="radiogroup" aria-labelledby="l2" id="bLen"></div></div>
+      <div class="bstep"><div class="bl"><i>3</i>Quando fica bom?</div><div class="two"><div class="fld"><label for="bDate">Dia (opcional)</label><input type="date" id="bDate"></div><div class="fld"><label for="bPer">Período</label><select id="bPer"><option>Qualquer horário</option><option>Manhã</option><option>Tarde</option><option>Noite</option></select></div></div></div>
+      <div class="bstep"><div class="bl"><i>4</i>Seu nome</div><div class="fld"><input id="bName" autocomplete="given-name" placeholder="Como podemos te chamar?" aria-label="Seu nome"></div><p class="err" id="eName" hidden>Digite seu nome para a equipe saber com quem fala.</p><div class="fld"><textarea id="bNote" maxlength="300" placeholder="Algo que a gente precisa saber? (opcional)" aria-label="Observações"></textarea></div></div>
+    </form>
+    <aside class="sum" aria-live="polite">
+      <p class="eyebrow" style="margin:0">Seu pedido</p>
+      <h3 id="sT">Escolha um cuidado</h3>
+      <div class="est" id="sE">—<small>O valor aparece quando houver tabela</small></div>
+      <dl><div><dt>Comprimento</dt><dd id="sL">—</dd></div><div><dt>Quando</dt><dd id="sW">Qualquer horário</dd></div><div><dt>Nome</dt><dd id="sN">—</dd></div></dl>
+      <button class="btn btn-gold" type="submit" form="bform">Enviar pelo WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <p class="note">A equipe confirma horário e valor final depois de avaliar o seu cabelo.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="loc" id="local">
+  <div class="loc-wrap">
+    <div class="map" id="map"><img class="rv-img" src="img/fachada.webp" alt="Fachada do Espaço Andressa Hair à noite" loading="lazy"></div>
+    <div class="loc-card rv">
+      <svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+      <h2>Um endereço. <em>Muitos cuidados.</em></h2>
+      <address>Rua Antônio Sarzedas, 141<br>Sapopemba, São Paulo – SP<br><span style="color:var(--dim)">CEP 03979-070</span></address>
+      <a class="btn btn-gold" href="https://maps.app.goo.gl/cgRmqYwyNohTu5p87" target="_blank" rel="noopener">Como chegar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="ulink" style="justify-self:start" data-wa="Olá, Andressa! Vim pelo site e queria combinar um horário.">Combinar meu horário</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fl"><img src="img/logo-gold.png" alt="Espaço Andressa Hair" loading="lazy"></div>
+    <nav aria-label="Rodapé"><a href="#servicos">Serviços</a><a href="#valores">Valores</a><a href="#resultados">Resultados</a><a href="#experiencias">Noivas e spa</a><a href="#agendar">Agendar</a><a href="https://www.instagram.com/andressa_hair01/" target="_blank" rel="noopener">Instagram</a><a href="https://search.google.com/local/writereview?placeid=ChIJ_ZhklKhpzpQRIbhe6xhH3UM" target="_blank" rel="noopener">Avaliar no Google</a></nav>
+    <p style="font-size:.86rem;color:var(--ink2)">R. Antônio Sarzedas, 141 · Sapopemba · São Paulo/SP · (11) 98168-9148</p>
+    <div class="cr"><span>© 2026 Espaço Andressa Hair</span><span>Site por CATALYX</span></div>
+  </div>
+</footer>
+
+<a class="fab away" id="fab" data-wa="Olá, Andressa! Vim pelo site e gostaria de agendar um horário." aria-label="Conversar no WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.5 20.5l1.3-4.4A8.5 8.5 0 1 1 8 19.3z"/><path d="M9 8.6c.2-.5.4-.6.8-.6h.5c.2 0 .4.1.5.4l.7 1.6c.1.2 0 .5-.1.7l-.5.6c-.1.1-.1.3 0 .5.6 1.1 1.5 2 2.6 2.6.2.1.4.1.5 0l.6-.6c.2-.2.4-.2.7-.1l1.6.7c.3.1.4.3.4.6v.5c0 .4-.2.7-.6.8-1.7.6-5-1-6.6-3.6-.8-1.3-1.3-2.9-1.1-3.4z" fill="currentColor" stroke="none"/></svg></a>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mCap" hidden>
+  <div class="m-top"><span id="mCap"></span><div style="display:flex;gap:8px"><button class="x" type="button" id="mZoom" aria-label="Ampliar para ler" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4M11 8.5v5M8.5 11h5"/></svg></button><button class="x" type="button" id="mClose" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div></div>
+  <div class="m-stage" id="mStage"></div>
+  <div class="m-bot" id="mBot"></div>
+</div>
+
+<script>
+/* CircularGallery (React Bits, versão DOM leve) */
+(function(){
+window.CircularGallery=function(root,o){
+  o=Object.assign({bend:3,borderRadius:.05,scrollEase:.05,itemSize:1,itemAspect:.78,gap:.26,scrollSpeed:2,snap:true,showTitles:true,openOnClick:true,intro:true},o);
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;const items=o.items,n=items.length;
+  root.innerHTML=items.map((it,i)=>`<div class="cg-item" data-i="${i}"><div class="cg-img"><img src="${it.image}" alt="${it.text}" loading="lazy" draggable="false"></div>${o.showTitles?`<div class="cg-t">${it.text}</div>`:''}</div>`).join('');
+  const els=[...root.children];let W,H,iw,ih,stepPx,total,R,Hh;const sc={cur:0,tgt:0};let introT=reduced||!o.intro?1:0,introOn=false,raf=0,vis=false,activeI=-1;
+  function lay(){W=root.clientWidth;H=root.clientHeight;ih=H*.66*o.itemSize;iw=ih*o.itemAspect;if(iw>W*.62){iw=W*.62;ih=iw/o.itemAspect}stepPx=iw*(1+o.gap);total=stepPx*n;Hh=W/2;const B=Math.abs(o.bend)*H*.06;R=(Hh*Hh+B*B)/(2*B);
+    root.style.setProperty('--cg-r',Math.round(o.borderRadius*iw*2)+'px');els.forEach(e=>{e.style.width=iw+'px';e.style.height=ih+'px'})}
+  function draw(){let best=1e9,bi=0;els.forEach((e,i)=>{let x=i*stepPx-sc.cur;x=((x%total)+total)%total;if(x>total/2)x-=total;
+      const ex=Math.min(Math.abs(x),Hh),arc=R-Math.sqrt(Math.max(R*R-ex*ex,0)),rot=Math.sign(x)*Math.asin(Math.min(ex/R,1))*180/Math.PI;
+      const delay=Math.min(Math.abs(x)/W,1)*.45,p=Math.max(0,Math.min(1,(introT-delay)/.55)),ip=1-Math.pow(1-p,4);
+      e.style.transform=`translate(${x-iw/2}px,${arc+(1-ip)*H*.5}px) rotate(${rot}deg)`;e.style.opacity=ip;if(Math.abs(x)<best){best=Math.abs(x);bi=i}});
+    if(bi!==activeI){activeI=bi;o.onChange&&o.onChange(bi)}}
+  function tick(){raf=0;sc.cur+=(sc.tgt-sc.cur)*o.scrollEase*(reduced?20:1.6);if(introOn&&introT<1)introT=Math.min(1,introT+.018);draw();if(vis&&(Math.abs(sc.tgt-sc.cur)>.3||(introOn&&introT<1)))raf=requestAnimationFrame(tick)}
+  const wake=()=>{if(!raf)raf=requestAnimationFrame(tick)};let drag=null;
+  root.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY,t:sc.tgt,moved:false,id:e.pointerId}});
+  root.addEventListener('pointermove',e=>{if(!drag||drag.id!==e.pointerId)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;
+    if(!drag.moved){if(Math.abs(dx)<6)return;if(Math.abs(dy)>Math.abs(dx)*1.2&&e.pointerType!=='mouse'){drag=null;return}drag.moved=true;try{root.setPointerCapture(e.pointerId)}catch(_){}}sc.tgt=drag.t-dx*o.scrollSpeed*.6;wake()});
+  const up=e=>{if(!drag||drag.id!==e.pointerId)return;const d=drag;drag=null;if(d.moved){if(o.snap)sc.tgt=Math.round(sc.tgt/stepPx)*stepPx;wake();root._sup=true;setTimeout(()=>root._sup=false,50)}};
+  root.addEventListener('pointerup',up);root.addEventListener('pointercancel',up);
+  root.addEventListener('click',e=>{if(root._sup)return;const it=e.target.closest('.cg-item');if(!it)return;const i=+it.dataset.i;if(i!==activeI)go(i);else if(o.openOnClick&&o.onItemClick)o.onItemClick(items[i],i)});
+  root.addEventListener('keydown',e=>{if(e.key==='ArrowRight')next(1);else if(e.key==='ArrowLeft')next(-1);else if(e.key==='Enter'&&o.onItemClick)o.onItemClick(items[activeI],activeI);else return;e.preventDefault()});
+  function go(i){let d=i-activeI;if(d>n/2)d-=n;if(d<-n/2)d+=n;sc.tgt=Math.round(sc.tgt/stepPx)*stepPx+d*stepPx;wake()}
+  function next(d){sc.tgt=Math.round(sc.tgt/stepPx)*stepPx+d*stepPx;wake()}
+  new IntersectionObserver(([e])=>{vis=e.isIntersecting;if(vis){introOn=true;wake()}},{threshold:.2}).observe(root);
+  new ResizeObserver(()=>{lay();draw()}).observe(root);lay();draw();return{next,go};
+};})();
+
+(function(){
+'use strict';
+document.documentElement.classList.add('js');
+const WA='5511981689148',wa=t=>'https://wa.me/'+WA+'?text='+encodeURIComponent(t);
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;const brl=n=>n.toLocaleString('pt-BR');
+const ARW='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17 17 7M8 7h9v9"/></svg>';
+function bindWa(r){(r||document).querySelectorAll('[data-wa]').forEach(a=>{a.href=wa(a.dataset.wa);a.target='_blank';a.rel='noopener'})}
+
+/* intro: porta de vidro */
+const intro=$('#intro');let seen=false;try{seen=sessionStorage.getItem('ah4')==='1';sessionStorage.setItem('ah4','1')}catch(e){}
+if(seen||RM){intro.remove()}else{document.body.classList.add('intro');document.documentElement.style.overflow='hidden';
+  let done=false;const open=()=>{if(done)return;done=true;intro.classList.add('open');document.documentElement.style.overflow='';setTimeout(()=>{intro.remove();document.body.classList.remove('intro')},1400)};
+  setTimeout(open,1500);$('#skip').onclick=open;intro.addEventListener('click',e=>{if(e.target.closest('.door'))open()})}
+
+/* faixas */
+const it1='<span>Espaço Andressa Hair<i>✦</i>Especialista em alisamentos<i>✦</i>Método AH<i>✦</i>Sapopemba · SP<i>✦</i></span>';
+const it2='<span>Andressa Hair <i>✦</i> Liso, leve e cheio de luz <i>✦</i> Andressa Hair <i>✦</i> Beleza & cuidado <i>✦</i></span>';
+$('#b1').innerHTML=$('#b3').innerHTML=it1.repeat(4);$('#b2').innerHTML=$('#b4').innerHTML=it2.repeat(4);
+
+/* menu, fab, progresso, parallax */
+const NAVS=[['#servicos','Serviços'],['#valores','Valores'],['#resultados','Resultados'],['#videos','Vídeos'],['#depoimentos','Depoimentos'],['#experiencias','Noivas e spa'],['#local','Localização']];
+$('#sheetNav').innerHTML=NAVS.map(n=>`<a href="${n[0]}">${n[1]}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>`).join('');
+const sheet=$('#sheet'),om=$('#om');
+const openS=()=>{sheet.hidden=false;requestAnimationFrame(()=>sheet.classList.add('open'));om.setAttribute('aria-expanded','true');document.documentElement.style.overflow='hidden';$('#cm').focus()};
+const closeS=()=>{sheet.classList.remove('open');om.setAttribute('aria-expanded','false');document.documentElement.style.overflow='';setTimeout(()=>sheet.hidden=true,400)};
+om.onclick=openS;$('#cm').onclick=()=>{closeS();om.focus()};sheet.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',closeS));
+const hw=$('#heroWord'),pg=$('#prog');let tk=false;
+addEventListener('scroll',()=>{if(tk)return;tk=true;requestAnimationFrame(()=>{const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
+  pg.style.setProperty('--p',h>0?y/h:0);$('#fab').classList.toggle('away',y<500);if(!RM&&y<900)hw.style.setProperty('--py',(y*.35)+'px');tk=false})},{passive:true});
+
+/* revelar ao rolar */
+const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+function watch(root){(root||document).querySelectorAll('.rv,.rv-img,.scale-in').forEach(el=>ro.observe(el))}
+setTimeout(()=>$$('.rv,.rv-img,.scale-in').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<innerHeight)el.classList.add('in')}),50);
+
+/* dados */
+const LENS=['Até o pescoço','Meio das costas','Até a cintura','Até o bumbum'];
+const SVC=[
+ ['Alisamentos','Especialidade','r5','Orgânico, Método Andressa Hair, progressiva, selagem e botox. Valores por comprimento na tabela.'],
+ ['Tratamentos','Cuidado','s2','Protocolos e cronogramas capilares para recuperar força, brilho e maciez dos fios.'],
+ ['Spa capilar','Relaxamento','spa1','Lavagem terapêutica deitada, com arco de água, luz e massagem no couro cabeludo.'],
+ ['Luzes','Cor','r3','Inspire-se nos resultados e converse com a equipe sobre a iluminação que você procura.'],
+ ['Cortes','Estilo','c2','Um novo comprimento ou a manutenção do seu corte. Encontre o seu próximo visual.'],
+ ['Penteados','Ocasiões especiais','p2','Detalhes que acompanham você nos momentos especiais. Consulte as possibilidades.'],
+ ['Dia da Noiva','Exclusivo','n2','Sala reservada com banheira, penteado e maquiagem para o grande dia.'],
+ ['Sobrancelhas','Beleza','s6','Um cuidado a mais para o seu olhar. Consulte a equipe para conhecer o atendimento.'],
+ ['Unhas','Autocuidado','u1','Reserve um momento para cuidar das suas mãos e renovar a esmaltação.']];
+const PR=[
+ {g:'Alisamento orgânico',d:'Sem formol',it:[['Com tratamento','',[170,200,230,260]],['Sem tratamento','',[150,180,210,240]]]},
+ {g:'Orgânicos especiais',d:'Redução de volume',it:[['Método Andressa Hair','Assinatura da casa',[180,220,260,300]],['Botox orgânico','',[110,140,160,180]]]},
+ {g:'Com formol',d:'Liso e brilho',it:[['Progressiva','',[130,160,180,200]],['Selagem','',[100,120,140,160]],['Botox','',[70,90,110,130]]]},
+ {g:'Escova',d:'Leve e solta',it:[['Escova','',[35,45,55,65]]]}];
+const RES=[['r5','Brilho que encanta'],['r0','Alisamento orgânico'],['c4','Acobreado'],['r1','Cuidado em cada fio'],['r7','Selagem'],['c1','Bob'],['r6','Loiro'],['c3','Liso espelhado'],['r2','Leveza e movimento'],['r3','Luzes'],['c2','Chanel'],['s5','Ondas soltas']];
+const TST=[['t2','Igual ao seu trabalho não tem.'],['t1','Amei amei amei, muito obrigado.'],['t12','Me sinto tão bem quando vou aí.'],['t9','Foi o melhor que já fiz, sem dúvidas.'],['t10','Trabalho maravilhoso, mesmo com a correria.'],['t11','Suas meninas são maravilhosas.'],['t5','Super amei, conquistaram mais uma cliente.'],['t6','É a melhor de todas, não tem jeito.'],['t3','Eu ameiii, ficou impecável.'],['t7','Trabalho como sempre impecável.'],['t4','Meu cabelo ficou tão baixo que parece que nem tem.'],['t8','Uma amiga me indicou você.']];
+const VD={organico:['Alisamento orgânico','Resultado','0:16'],formol:['Progressiva com formol','Resultado','0:12'],selagem:['Selagem de verniz','Resultado','0:26'],feedback:['“Vamos bater um papinho”','Cliente','0:22'],betina:['A transformação da Betina','Antes e depois','1:39'],espaco:['O salão por dentro','O espaço','0:15'],spa:['Spa capilar','Experiência','1:11'],banheira:['Sala do Dia da Noiva','Experiência','0:26']};
+const GAL={res:RES.map(r=>({src:'img/'+r[0]+'.webp',cap:r[1]})),tst:TST.map(t=>({src:'img/'+t[0]+'.webp',cap:'“'+t[1]+'”',read:true})),
+ bride:[{src:'img/n2.webp',cap:'Noiva'},{src:'img/n5.webp',cap:'O cortejo'},{src:'img/n1.webp',cap:'Daminhas'},{src:'img/n3.webp',cap:'Banheira'},{src:'img/n4.webp',cap:'Sala do Dia da Noiva'}],
+ spa:[{src:'img/spa2.webp',cap:'Spa capilar'},{src:'img/spa1.webp',cap:'Spa capilar'}]};
+
+/* serviços: cards */
+const track=$('#track');
+track.innerHTML=SVC.map((s,i)=>`<article class="scard${i===0?' on':''}" aria-label="${s[0]}, ${i+1} de ${SVC.length}"><div class="ph"><img src="img/${s[2]}.webp" alt="${s[0]}" loading="${i<2?'eager':'lazy'}"><span class="num">${String(i+1).padStart(2,'0')}</span><div class="tt"><small>${s[1]}</small><h3>${s[0]}</h3></div></div><div class="bd"><p>${s[3]}</p><a class="btn btn-line" data-wa="Olá! Vim pelo site e gostaria de saber mais sobre ${s[0]}.">Tenho interesse ${ARW}</a></div></article>`).join('');
+const cards=[...track.children];
+$('#dots').innerHTML=SVC.map((s,i)=>`<button type="button" aria-label="Ir para ${s[0]}" aria-current="${i===0}"></button>`).join('');
+const dots=[...$('#dots').children];let si=0;
+const goS=i=>{i=Math.max(0,Math.min(cards.length-1,i));const c=cards[i];track.scrollTo({left:c.offsetLeft-(track.clientWidth-c.offsetWidth)/2,behavior:RM?'auto':'smooth'})};
+function curS(){const mid=track.scrollLeft+track.clientWidth/2;let b=0,bd=1e9;cards.forEach((c,i)=>{const d=Math.abs(c.offsetLeft+c.offsetWidth/2-mid);if(d<bd){bd=d;b=i}});
+  if(b!==si||!cards[b].classList.contains('on')){si=b;cards.forEach((c,i)=>c.classList.toggle('on',i===b));dots.forEach((d,i)=>d.setAttribute('aria-current',i===b));$('#sCount').textContent=String(b+1).padStart(2,'0')+' / '+String(cards.length).padStart(2,'0')}}
+track.addEventListener('scroll',()=>requestAnimationFrame(curS),{passive:true});
+$('#sPrev').onclick=()=>goS(si-1);$('#sNext').onclick=()=>goS(si+1);dots.forEach((d,i)=>d.onclick=()=>goS(i));
+track.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){goS(si+1);e.preventDefault()}else if(e.key==='ArrowLeft'){goS(si-1);e.preventDefault()}});
+requestAnimationFrame(()=>{track.scrollLeft=0;curS()});
+
+/* valores */
+let L=1;
+$('#seg').innerHTML=['Pescoço','Meio das costas','Cintura','Bumbum'].map((l,i)=>`<button type="button" role="radio" aria-checked="${i===L}" data-i="${i}">${l}</button>`).join('');
+function rp(fl){$('#pgrid').innerHTML=PR.map((g,k)=>`<div class="pcard rv in" style="--d:${k*.06}s"><h3>${g.g}<small>${g.d}</small></h3>${g.it.map(i=>`<div class="prow${fl?' flash':''}"><span class="n">${i[0]}${i[1]?`<small>${i[1]}</small>`:''}</span><span class="d"></span><span class="v"><small>R$</small>${brl(i[2][L])}</span></div>`).join('')}</div>`).join('')}
+$('#seg').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;L=+b.dataset.i;$$('#seg button').forEach(x=>x.setAttribute('aria-checked',x===b));rp(true)});
+$('#seg').addEventListener('keydown',e=>{if(!['ArrowRight','ArrowLeft'].includes(e.key))return;e.preventDefault();L=(L+(e.key==='ArrowRight'?1:3))%4;const bs=$$('#seg button');bs.forEach((x,i)=>x.setAttribute('aria-checked',i===L));bs[L].focus();rp(true)});
+rp(false);$$('#pgrid .pcard').forEach(c=>{c.classList.remove('in');ro.observe(c)});
+
+/* resultados */
+const cg=CircularGallery($('#cg'),{items:RES.map(r=>({image:'img/'+r[0]+'.webp',text:r[1]})),bend:3,borderRadius:.05,scrollEase:.05,itemSize:1,itemAspect:.78,gap:.26,scrollSpeed:2,snap:true,showTitles:true,openOnClick:true,intro:true,
+  onItemClick:(it,i)=>openGal('res',i),onChange:i=>{$('#cgCount').textContent=String(i+1).padStart(2,'0')+' / '+String(RES.length).padStart(2,'0')}});
+$('#cgPrev').onclick=()=>cg.next(-1);$('#cgNext').onclick=()=>cg.next(1);
+
+/* vídeos */
+const RL=['organico','formol','selagem','feedback','betina','espaco'];const vrail=$('#vrail');
+vrail.innerHTML=RL.map((k,i)=>`<div class="vcard"><button type="button" class="mv" data-video="${k}" aria-label="Assistir com som: ${VD[k][0]}"><video muted loop playsinline preload="none" poster="img/v-${k}.webp" data-src="vid/${k}.mp4"></video><span class="chip">${VD[k][1]}</span><span class="dur">${VD[k][2]}</span><span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><div class="cap"><b>${VD[k][0]}</b><span>Assistir</span></div></div>`).join('');
+const vio=new IntersectionObserver(es=>es.forEach(en=>{const v=en.target;if(en.isIntersecting&&en.intersectionRatio>.6&&!RM){if(!v.src)v.src=v.dataset.src;v.play().catch(()=>{})}else v.pause()}),{threshold:[0,.6]});
+$$('#vrail video').forEach(v=>vio.observe(v));
+const vstep=()=>vrail.firstElementChild.getBoundingClientRect().width+14;
+$('#vPrev').onclick=()=>vrail.scrollBy({left:-vstep(),behavior:'smooth'});$('#vNext').onclick=()=>vrail.scrollBy({left:vstep(),behavior:'smooth'});
+function vp(){const m=vrail.scrollWidth-vrail.clientWidth,p=m>0?vrail.scrollLeft/m:0,w=Math.max(12,vrail.clientWidth/vrail.scrollWidth*100);const i=$('#vprog');i.style.width=w+'%';i.style.left=(p*(100-w))+'%'}
+vrail.addEventListener('scroll',()=>requestAnimationFrame(vp),{passive:true});addEventListener('resize',vp);vp();
+
+/* depoimentos */
+const STAR='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.1l-5.7 3.2 1.2-6.4-4.7-4.4 6.4-.8z"/></svg>';
+$('#qrail').innerHTML=TST.map((t,i)=>`<figure class="qcard" style="margin:0"><button type="button" data-gal="tst" data-i="${i}" aria-label="Ler mensagem completa"><img src="img/${t[0]}.webp" alt="Print da mensagem da cliente" loading="lazy"></button><div class="st">${STAR.repeat(5)}</div><p>“${t[1]}”</p></figure>`).join('');
+$$('#qrail img').forEach(im=>{const f=()=>{if(im.naturalWidth/im.naturalHeight>1.1)im.closest('.qcard').classList.add('wide')};im.complete&&im.naturalWidth?f():im.addEventListener('load',f)});
+
+/* mapa real fora do preview */
+if(!/claude|anthropic/i.test(location.hostname)&&location.protocol.startsWith('http')&&!/localhost|127\.0/.test(location.hostname)){
+  $('#map').innerHTML='<iframe title="Mapa do Espaço Andressa Hair" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Rua%20Ant%C3%B4nio%20Sarzedas%2C%20141%2C%20Sapopemba%2C%20S%C3%A3o%20Paulo&output=embed"></iframe>'}
+
+/* modal */
+const modal=$('#modal'),stage=$('#mStage'),mBot=$('#mBot'),mCap=$('#mCap'),mZoom=$('#mZoom');let cur=null,last=null,hideT=0;
+const NB=d=>`<button class="m-nav m-${d}" type="button" aria-label="${d==='prev'?'Anterior':'Próxima'}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="${d==='prev'?'M15 6l-6 6 6 6':'M9 6l6 6-6 6'}"/></svg></button>`;
+function show(){clearTimeout(hideT);if(modal.hidden||!modal.classList.contains('show')){last=document.activeElement;modal.hidden=false;requestAnimationFrame(()=>modal.classList.add('show'));document.documentElement.style.overflow='hidden';$('#mClose').focus()}}
+function close(){modal.classList.remove('show');const v=stage.querySelector('video');if(v)v.pause();hideT=setTimeout(()=>{modal.hidden=true;stage.innerHTML='';stage.classList.remove('scroll')},250);document.documentElement.style.overflow='';cur=null;last&&last.focus&&last.focus()}
+function openGal(g,i){const Ls=GAL[g];i=(i+Ls.length)%Ls.length;cur={g,i};const it=Ls[i];stage.classList.remove('scroll');
+  stage.innerHTML=`<img src="${it.src}" alt="${it.cap}">`+(Ls.length>1?NB('prev')+NB('next'):'');mCap.innerHTML=`<b>${it.cap}</b> · ${i+1} de ${Ls.length}`;mZoom.hidden=!it.read;
+  mBot.innerHTML=g==='tst'?`<a class="btn btn-gold btn-sm" href="https://search.google.com/local/writereview?placeid=ChIJ_ZhklKhpzpQRIbhe6xhH3UM" target="_blank" rel="noopener">Deixar minha avaliação</a>`:`<a class="btn btn-gold btn-sm" data-wa="Olá, Andressa! Vi no site a foto “${it.cap}” e quero um resultado assim.">Quero esse resultado</a>`;bindWa(mBot);show()}
+function openVid(k){cur=null;const v=VD[k];stage.classList.remove('scroll');stage.innerHTML=`<video src="vid/${k}.mp4" poster="img/v-${k}.webp" controls playsinline autoplay></video>`;
+  mCap.innerHTML=`<b>${v[0]}</b> · ${v[2]}`;mZoom.hidden=true;mBot.innerHTML=`<a class="btn btn-gold btn-sm" data-wa="Olá, Andressa! Vi o vídeo “${v[0]}” no site e quero agendar.">Quero agendar</a>`;bindWa(mBot);$$('#vrail video').forEach(x=>x.pause());show()}
+stage.addEventListener('click',e=>{if(!cur){if(e.target===stage)close();return}if(e.target.closest('.m-prev'))openGal(cur.g,cur.i-1);else if(e.target.closest('.m-next'))openGal(cur.g,cur.i+1);else if(e.target===stage)close()});
+let sx=null;stage.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+stage.addEventListener('touchend',e=>{if(sx===null||!cur||stage.classList.contains('scroll'))return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)openGal(cur.g,cur.i+(dx<0?1:-1));sx=null},{passive:true});
+mZoom.onclick=()=>stage.classList.toggle('scroll');$('#mClose').onclick=close;
+addEventListener('keydown',e=>{if(!modal.hidden){if(e.key==='Escape')close();else if(cur&&e.key==='ArrowRight')openGal(cur.g,cur.i+1);else if(cur&&e.key==='ArrowLeft')openGal(cur.g,cur.i-1)}else if(e.key==='Escape'&&sheet.classList.contains('open')){closeS();om.focus()}});
+document.addEventListener('click',e=>{const v=e.target.closest('[data-video]');if(v){e.preventDefault();openVid(v.dataset.video);return}const g=e.target.closest('button[data-gal]');if(g)openGal(g.dataset.gal,+g.dataset.i)});
+
+/* agendamento */
+const BS=[{n:'Alisamento orgânico',v:[['Com tratamento',[170,200,230,260]],['Sem tratamento',[150,180,210,240]]]},{n:'Método Andressa Hair',p:[180,220,260,300]},{n:'Botox orgânico',p:[110,140,160,180]},
+ {n:'Progressiva com formol',p:[130,160,180,200]},{n:'Selagem',p:[100,120,140,160]},{n:'Botox com formol',p:[70,90,110,130]},{n:'Escova',p:[35,45,55,65]},
+ {n:'Tratamento capilar'},{n:'Spa capilar'},{n:'Luzes / cor'},{n:'Corte'},{n:'Penteado'},{n:'Dia da Noiva'},{n:'Sobrancelhas'},{n:'Unhas'}];
+const st={s:null,l:null,v:0};
+$('#bSvc').innerHTML=BS.map((b,i)=>`<label class="opt"><input type="radio" name="bs" value="${i}" id="bs${i}"><span>${b.n}</span></label>`).join('');
+$('#bLen').innerHTML=LENS.map((l,i)=>`<label class="opt"><input type="radio" name="bl" value="${i}"><span>${l}</span></label>`).join('');
+const price=()=>{const b=BS[st.s];if(!b)return null;const a=b.v?b.v[st.v][1]:b.p;if(!a)return null;return st.l===null?{from:Math.min(...a)}:{val:a[st.l]}};
+function upd(){const b=BS[st.s];$('#stepLen').hidden=!(b&&(b.p||b.v));$('#stepVar').hidden=!(b&&b.v);
+  $('#sT').textContent=b?b.n+(b.v?' · '+b.v[st.v][0].toLowerCase():''):'Escolha um cuidado';const p=price();
+  $('#sE').innerHTML=p?(p.val!=null?`R$ ${brl(p.val)}<small>Pela tabela, ${LENS[st.l].toLowerCase()}</small>`:`a partir de R$ ${brl(p.from)}<small>Escolha o comprimento para ver o valor</small>`):`—<small>${b?'Valor combinado com a equipe':'O valor aparece quando houver tabela'}</small>`;
+  $('#sL').textContent=b&&(b.p||b.v)&&st.l!==null?LENS[st.l]:'—';const d=$('#bDate').value;$('#sW').textContent=(d?d.split('-').reverse().join('/')+' · ':'')+$('#bPer').value;$('#sN').textContent=$('#bName').value.trim()||'—'}
+$('#bform').addEventListener('change',e=>{const t=e.target;if(t.name==='bs'){st.s=+t.value;st.v=0;$('#eSvc').hidden=true;const B=BS[st.s];$('#bVar').innerHTML=B.v?B.v.map((x,i)=>`<label class="opt"><input type="radio" name="bv" value="${i}" ${i===0?'checked':''}><span>${x[0]}</span></label>`).join(''):''}
+  if(t.name==='bl')st.l=+t.value;if(t.name==='bv')st.v=+t.value;upd()});
+$('#bform').addEventListener('input',e=>{if(e.target.type!=='radio')upd()});
+try{$('#bDate').min=new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10)}catch(e){}
+$('#bform').addEventListener('submit',e=>{e.preventDefault();const b=BS[st.s],nm=$('#bName').value.trim();$('#eSvc').hidden=!!b;$('#eName').hidden=!!nm;
+  if(!b){$('#bs0').focus();$('#bSvc').scrollIntoView({block:'center',behavior:'smooth'});return}if(!nm){$('#bName').focus();return}
+  const p=price();let t=`Olá, Andressa! Vim pelo site e quero agendar.\n\n*Cuidado:* ${$('#sT').textContent}`;if(st.l!==null&&(b.p||b.v))t+=`\n*Comprimento:* ${LENS[st.l]}`;if(p&&p.val!=null)t+=`\n*Valor da tabela:* R$ ${brl(p.val)}`;
+  t+=`\n*Quando:* ${$('#sW').textContent}\n*Nome:* ${nm}`;const nt=$('#bNote').value.trim();if(nt)t+=`\n*Obs.:* ${nt}`;
+  const a=document.createElement('a');a.href=wa(t);a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove()});
+upd();bindWa(document);watch();
+})();
+</script>
